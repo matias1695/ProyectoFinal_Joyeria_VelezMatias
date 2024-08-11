@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Base </title>
+    <link rel="stylesheet" href="{% static 'AppJoyeria/css/style.css' %}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="{% url 'inicio' %}">Inicio</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'articulos' %}">Articulos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'ventas' %}">Ventas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'clientes' %}">Clientes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'tareas' %}">Tareas</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                {% if request.user.is_authenticated %}
+                    <li class="nav-item">
+                        {% if request.user.imagen %}
+                            <img src="{{ request.user.imagen.imagen.url }}" alt="" class="rounded-circle" height="40px">
+                        {% else %}
+                            <img src="{% static 'AppJoyeria/imagenes/default-avatar.jpg' %}" alt="Avatar predeterminado" class="rounded-circle" height="40px">
+                        {% endif %}
+                        <span class="ml-2">{{ request.user.username }}</span> <!-- Mostrar nombre de usuario -->
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-register" href="{% url 'Editar' %}">Editar Usuario</a>
+                    </li>
+                    <li class="nav-item">
+                        <form action="{% url 'Logout' %}" method="post" style="display:inline;">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-login">Cerrar Sesión</button>
+                        </form>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="btn btn-login" href="{% url 'login' %}">Iniciar Sesión</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+    <!-- Título de bienvenida -->
+    <div class="welcome-title">
+        <h1>{% block titulo %}{% endblock titulo %}</h1>
+    </div>
+    {% block contenidoQueCambia %}
+    {% endblock contenidoQueCambia %}
+
+    <!-- Contenedor principal para el contenido -->
+    <div class="container">
+        <div class="content">
+            <!-- Aquí puedes agregar el contenido principal -->
+        </div>
+    </div>
+
+    <!-- Imagen en el costado derecho -->
+    <div class="side-image">
+        <img src="{% static 'AppJoyeria/imagenes/1-removebg-preview.png' %}" alt="Logo" class="img-fluid">
+    </div>
+</body>
+</html>

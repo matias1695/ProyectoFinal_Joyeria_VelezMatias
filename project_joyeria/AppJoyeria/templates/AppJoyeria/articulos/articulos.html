@@ -1,0 +1,11 @@
+{% extends "AppJoyeria/base.html" %}
+{% load static %}
+{% block titulo %}Articulos{% endblock titulo %}
+
+{% block contenidoQueCambia %}
+<div class="button-container">
+    <button onclick="location.href='{% url 'leerArticulos' %}'">Lista de Articulos</button>
+    <button onclick="location.href='{% url 'buscarArticulos' %}'">Buscar articulos</button>
+    <button onclick="location.href='{% url 'cargaArticulo' %}'">Cargar Articulo</button>
+</div>
+{% endblock contenidoQueCambia %}

@@ -1,0 +1,17 @@
+{% extends "AppJoyeria/base.html" %}
+{% load static %}
+{% block titulo %}Busqueda de Ventas{% endblock titulo %}
+
+{% block contenidoQueCambia %}
+<div class="form-container">
+    <h1>Buscar</h1>
+    <form action="{% url 'buscarVentas' %}" method="POST">
+        {% csrf_token %}
+        <table>
+            {{ mi_formulario.as_p }}
+        </table>
+        <input type="submit" value="Enviar" class='btn btn-primary'>
+        <a href="{% url 'ventas' %}" class="btn btn-secondary">Volver</a>
+    </form>
+</div>
+{% endblock contenidoQueCambia %}

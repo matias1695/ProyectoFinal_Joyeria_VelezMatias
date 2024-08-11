@@ -1,0 +1,22 @@
+{% extends "AppJoyeria/base.html" %}
+{% load static %}
+{% block titulo %}Detalle de Ventas{% endblock titulo %}
+
+{% block contenidoQueCambia %}
+<div class="container">
+    <div class="table-container">
+        <h1>Detalle</h1>
+    <p>ID Venta: <i>{{venta.idVenta}}</i></p>
+    <p>Fecha: <i>{{venta.fecha}}</i></p>
+    <p>ID Cliente: <i>{{venta.idCliente}}</i></p>
+    <p>ID Articulo: <i>{{venta.idArt}}</i></p>
+    <p>Cantidad: <i>{{venta.cant}}</i></p>
+    <p>Monto Venta: <i>{{venta.montoVta}}</i></p>
+    <p>Tipo de Pago: <i>{{venta.tipoPago}}</i></p>
+    <p>
+        <a href="{% url 'leerVentas' %}" class='btn btn-secondary'>Regresar</a>
+    </p>
+    </div>
+</div>
+{% endblock contenidoQueCambia %}
+

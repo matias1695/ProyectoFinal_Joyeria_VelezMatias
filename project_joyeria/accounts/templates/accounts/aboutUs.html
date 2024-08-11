@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <!-- Agregar el enlace a Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Agregar el enlace a Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Agregar el enlace al archivo CSS personalizado -->
+    <link rel="stylesheet" href="{% static 'accounts/css/style.css' %}">
+</head>
+<body>
+    {% if not user.is_authenticated %}
+    <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-fixed">
+        <a class="navbar-brand" href="login">Iniciar Sesion</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+    {% endif %}
+    
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Columna para el formulario -->
+            <div class="col-md-6 d-flex align-items-center justify-content-center">
+                <div class="form_area">
+                    <h2>Funcionalidad del Proyecto</h2>
+                    <p><strong>Gestión de Tareas</strong></p>
+                    <ul>
+                        <li><strong>Crear Tareas</strong>: Los administradores pueden agregar nuevas tareas, especificando título, descripción, fecha de vencimiento y estado.</li>
+                        <li><strong>Listar Tareas</strong>: Visualiza todas las tareas existentes en una tabla, con opciones para ver detalles y editar el estado.</li>
+                        <li><strong>Editar Tareas</strong>: Permite modificar el estado de una tarea existente mientras se visualizan sus detalles inalterables.</li>
+                    </ul>
+
+                    <p><strong>Administración de Usuarios</strong></p>
+                    <ul>
+                        <li><strong>Registro y Gestión de Perfiles</strong>: Los administradores pueden registrar nuevos usuarios y actualizar perfiles existentes, incluyendo avatar, email y contraseña.</li>
+                    </ul>
+
+                    <p><strong>Autenticación y Seguridad</strong></p>
+                    <ul>
+                        <li><strong>Inicio de Sesión y Cierre de Sesión</strong>: Gestión segura de acceso con autenticación de usuarios y opciones de cierre de sesión.</li>
+                    </ul>
+
+                    <p><strong>Gestión ABM</strong></p>
+                    <ul>
+                        <li><strong>Clientes</strong>: Realiza altas, bajas y modificaciones de clientes, gestionando toda la información necesaria para el seguimiento y atención al cliente.</li>
+                        <li><strong>Ventas</strong>: Administra y registra las ventas del negocio, facilitando un control detallado de las transacciones realizadas.</li>
+                        <li><strong>Artículos del Negocio</strong>: Gestiona el inventario de artículos del negocio, permitiendo la actualización de los mismos tanto como sus precios y descripciones.</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Columna para la imagen -->
+            <div class="col-md-6">
+                <div class="side-image">
+                    <img src="{% static 'accounts/imagenes/1-removebg-preview.png' %}" alt="Logo" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

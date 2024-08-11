@@ -1,0 +1,20 @@
+{% extends "AppJoyeria/base.html" %}
+{% load static %}
+{% block titulo %}Carga De Clientes{% endblock titulo %}
+
+{% block contenidoQueCambia %}
+<div class="main-container">
+    <div class="form-container">
+        <h1>Cargar</h1> 
+        <form action="" method="POST">
+            {% csrf_token %}
+            <table>
+                {{ form.as_table }}
+            </table>
+            <h1></h1>
+            <input type="submit" value="Enviar" class='btn btn-primary'>
+            <a href="{% url 'clientes' %}" class="btn btn-secondary">Cancelar</a>
+        </form>
+    </div>
+</div>
+{% endblock contenidoQueCambia %}

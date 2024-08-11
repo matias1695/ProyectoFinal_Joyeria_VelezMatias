@@ -1,0 +1,33 @@
+{% extends "accounts/login.html" %}
+{% load static %}
+
+
+
+    
+        {% block main %}
+        <div class="title">Editar Usuario</div>
+        
+        <!-- Mensajes de éxito o error -->
+        {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                    <div class="{% if message.tags %}{{ message.tags }}{% endif %}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <!-- Formulario de Edición -->
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form_group_ed_us">
+                {{ mi_form.as_table }}
+                <input type="submit" value="Actualizar" class='btn'>
+                <a href="{% url 'inicio' %}" class="btn ">Cancelar</a>
+                
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock main %}

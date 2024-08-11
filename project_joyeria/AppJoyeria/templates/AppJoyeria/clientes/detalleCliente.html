@@ -1,0 +1,18 @@
+{% extends "AppJoyeria/base.html" %}
+{% load static %}
+{% block titulo %}Detalle Clientes{% endblock titulo %}
+
+{% block contenidoQueCambia %}
+<div class="container">
+    <div class="table-container">
+        <h1>Detalle</h1>
+    <p>ID Cliente: <i>{{cliente.idCliente}}</i></p>
+    <p>Nombre: <i>{{cliente.nombre}}</i></p>
+    <p>Apellido: <i>{{cliente.apellido}}</i></p>
+    <p>Direccion Correo: <i>{{cliente.mail}}</i></p>
+    <p>
+        <a href="{% url 'leerClientes' %}" class='btn btn-secondary'>Regresar</a>
+    </p>
+    </div>
+</div>
+{% endblock contenidoQueCambia %}

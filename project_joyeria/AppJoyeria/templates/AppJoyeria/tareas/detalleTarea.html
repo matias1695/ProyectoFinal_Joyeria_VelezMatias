@@ -1,0 +1,20 @@
+{% extends "AppJoyeria/base.html" %}
+{% load static %}
+{% block titulo %}Detalle Tarea{% endblock titulo %}
+
+{% block contenidoQueCambia %}
+<div class="container">
+    <div class="table-container">
+        <h1>Detalle </h1>
+    <p>Titulo: <i>{{tarea.titulo}}</i></p>
+    <p>Descripcion: <i>{{tarea.descripcion}}</i></p>
+    <p>Fecha: <i>{{tarea.fecha}}</i></p>
+    <p>Estado: <i>{{tarea.estado}}</i></p>
+    
+    <p>
+        <a href="{% url 'leerTareas' %}" class='btn btn-secondary'>Regresar</a>
+    </p>
+    </div>
+</div>
+{% endblock contenidoQueCambia %}
+

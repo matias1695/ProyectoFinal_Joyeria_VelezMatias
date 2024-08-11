@@ -1,0 +1,225 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #c7a9a1d2; /* Fondo de la página */
+}
+
+/* Estilos para el menú */
+.navbar {
+    position: fixed; /* Fija el menú en la parte superior de la página */
+    top: 0;
+    right: 0;
+    left: 0; /* Asegura que el menú ocupe todo el ancho */
+    z-index: 500; /* Asegura que el menú esté sobre otros elementos */
+}
+
+/* Estilos para el botón del menú */
+.navbar-toggler {
+    position: absolute; /* Posiciona el botón dentro del menú */
+    top: 10px; /* Ajusta la distancia desde la parte superior */
+    right: 10px; /* Ajusta la distancia desde la parte derecha */
+}
+
+/* Estilos para el contenedor principal */
+.main-container {
+    display: flex; /* Usa flexbox para alinear los elementos */
+    align-items: center; /* Centra verticalmente los elementos */
+    height: 100vh; /* Hace que el contenedor ocupe toda la altura de la pantalla */
+    position: relative; /* Posiciona el contenedor para manejar la superposición */
+    padding-right: 50%; /* Espacio para la imagen, asegura que no se solape con el formulario */
+    margin-left: 100px;
+}
+
+/* Estilos específicos para el formulario */
+.form-container, .button-container {
+    margin: 0;
+    padding: 20px;
+    background-color: #e0c5c5; /* Fondo blanco para el formulario */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Sombra suave */
+    width: 500px; /* Ajusta el ancho del formulario */
+    z-index: 200; /* Asegura que el formulario esté encima de la imagen */
+    position: absolute; /* Posiciona el formulario en un lugar específico */
+    left: 0; /* Alinea el formulario al borde izquierdo */
+    top: 50%; /* Alinea el formulario verticalmente al centro */
+    transform: translateY(-50%); /* Centra el formulario verticalmente */
+    margin-left: 100px;
+}
+
+/* Estilos para el botón dentro de .button-container */
+.button-container button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #d18b88; /* Color del botón */
+    color: #fff; /* Color del texto del botón */
+    border: none;
+    border-radius: 4px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    font-size: 16px; /* Tamaño de la fuente */
+    margin-bottom: 10px; /* Margen inferior entre botones */
+}
+
+/* Cambios de estilo al pasar el cursor sobre el botón */
+.button-container button:hover {
+    background-color: #c37c79; /* Color del botón al pasar el cursor */
+}
+
+/* Estilos para los nuevos botones de la navbar */
+.btn-login, .btn-register {
+    margin-left: 10px; /* Margen para separarlos de los otros elementos */
+    padding: 10px 20px; /* Relleno para los botones */
+    color: white; /* Color del texto */
+    border-radius: 4px; /* Bordes redondeados */
+    text-decoration: none; /* Quita el subrayado del enlace */
+}
+
+.btn-login {
+    background-color: #f3b298; /* Color verde para Iniciar Sesión */
+}
+
+.btn-login:hover {
+    background-color: #f3b298; /* Color verde más oscuro para hover */
+}
+
+.btn-register {
+    background-color: #f17975; /* Color rojo para Registrarse */
+}
+
+.btn-register:hover {
+    background-color: #f17975; /* Color rojo más oscuro para hover */
+}
+
+/* Estilos para la imagen en el costado derecho */
+.side-image {
+    position: fixed; /* Fija la imagen en el costado derecho de la pantalla */
+    top: 50%; /* Posiciona la imagen verticalmente al centro */
+    right: 0; /* Posiciona la imagen en el borde derecho */
+    transform: translateY(-50%); /* Centra la imagen verticalmente */
+    width: 50%; /* Ajusta el tamaño de la imagen para que ocupe la mitad de la pantalla */
+    max-width: 500px; /* Ajusta el tamaño máximo de la imagen */
+    min-width: 200px; /* Establece un ancho mínimo para la imagen */
+    height: auto;
+    z-index: 100; /* Asegura que la imagen esté en un nivel superior, si es necesario */
+    margin-right: 150px;
+}
+
+.side-image img {
+    width: 100%; /* Ajusta el tamaño de la imagen */
+    height: auto;
+    transition: width 0.3s ease-in-out; /* Transición suave al cambiar el tamaño */
+}
+
+/* Estilos para el contenedor de la tabla */
+.table-container {
+    margin: 0;
+    padding: 20px;
+    background-color: #e0c5c5; /* Fondo blanco para la tabla */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.5); /* Sombra suave */
+    width: 800px; /* Ajusta el ancho del contenedor de la tabla */
+    position: absolute; /* Posiciona el contenedor en un lugar específico */
+    left: 0; /* Alinea el contenedor al borde izquierdo */
+    top: 50%; /* Alinea el contenedor verticalmente al centro */
+    transform: translateY(-50%); /* Centra el contenedor verticalmente */
+    z-index: 200; /* Asegura que el contenedor esté encima de la imagen */
+    
+}
+
+/* Estilos para la tabla */
+table {
+    width: 100%; /* Ajusta el ancho de la tabla */
+    border-collapse: collapse; /* Elimina los espacios entre las celdas */
+    
+}
+
+thead {
+    background-color: #e0c5c5; /* Fondo gris claro para el encabezado */
+}
+
+th, td {
+    padding: 15px; /* Espacio dentro de las celdas */
+    text-align: left; /* Alinea el texto a la izquierda */
+    border-bottom: 3px solid #000000; /* Línea divisoria entre las filas */
+}
+
+th {
+    background-color: #e0c5c5; /* Fondo gris claro para las celdas del encabezado */
+}
+
+.search-form-container input[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #d18b88; /* Color del botón */
+    color: #fff; /* Color del texto del botón */
+    border: none;
+    border-radius: 4px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    font-size: 16px; /* Tamaño de la fuente */
+    left: 0; /* Alinea el contenedor al borde izquierdo */
+    top: 50%; /* Alinea el contenedor verticalmente al centro */
+    margin-top: 10px; /* Margen superior */
+}
+
+/* Cambios de estilo al pasar el cursor sobre el botón */
+.search-form-container input[type="submit"]:hover {
+    background-color: #c37c79; /* Color del botón al pasar el cursor */
+}
+
+.is-Buton{
+    background-color: #c37c79;
+    margin-right:500px ;
+}
+
+/* Media queries para pantallas más pequeñas */
+@media (max-width: 1300px) {
+    .main-container {
+        flex-direction: column; /* Cambia la dirección del flexbox a columna */
+        align-items: center; /* Centra el contenido horizontalmente */
+        padding-right: 0; /* Elimina el padding derecho en pantallas más pequeñas */
+    }
+
+    .side-image {
+        width: 40%; /* Ajusta el tamaño de la imagen en pantallas más pequeñas */
+        margin-bottom: 20px; /* Agrega margen inferior para separar de otros elementos */
+        margin-right: 25%;
+    }
+
+    .form-container, .button-container, .table-container {
+        width: 100%; /* Ajusta el ancho del formulario y la tabla */
+        position: static; /* Cambia la posición a estática en pantallas más pequeñas */
+        margin-bottom: 20px; /* Agrega margen inferior en pantallas más pequeñas */
+    }
+}
+
+/* Media queries para pantallas aún más pequeñas */
+@media (max-width: 480px) {
+    .side-image {
+        width: 30%; /* Ajusta el tamaño de la imagen en pantallas más pequeñas */
+    }
+
+    .form-container, .button-container, .table-container {
+        width: 90%; /* Ajusta el ancho del formulario y la tabla */
+    }
+}
+
+.welcome-title {
+    position: absolute; /* Posiciona el título en un lugar fijo */
+    top: 80px; /* Ajusta el margen superior para que esté debajo de la navbar */
+    left: 50%; /* Centra el título horizontalmente */
+    transform: translateX(-50%); /* Centra el título en el eje horizontal */
+    width: 100%;
+    text-align: center; /* Centra el texto del título */
+    z-index: 200; /* Asegura que el título esté por encima del contenido */
+}
+.welcome-title h1 {
+    font-size: 2.5rem; /* Tamaño del título */
+    color: #8d4646; /* Color del título */
+    margin: 0;
+}
+body {
+    background-color: #f1dfdf; /* Cambia este color según tu preferencia */
+}

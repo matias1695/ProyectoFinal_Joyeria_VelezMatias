@@ -1,0 +1,59 @@
+{% extends "AppJoyeria/base.html" %}
+{% load static %}
+{% block titulo %}Lista de clientes{% endblock titulo %}
+
+{% block contenidoQueCambia %}
+<div class="container">
+    <div class="table-container">
+        <h1>Clientes</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>ACCIONES</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for c in clientes %}
+                    <tr>
+                        <td>{{ c.idCliente }}</td>
+                        <td>{{ c.nombre }}</td>
+                        <td>
+                            <a href="{% url 'eliminarCliente' c.pk %}">Eliminar</a>
+                            <a href="{% url 'editarCliente' c.pk %}">Editar</a>
+                            <a href="{% url 'detalleClientes' c.pk %}">Detalle</a>
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="5">No se encontraron ventas.</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <!-- Controles de paginación -->
+        <div class="pagination">
+            <span class="step-links">
+                {% if page_obj.has_previous %}
+                    <a href="?page=1">&laquo; primera</a>
+                    <a href="?page={{ page_obj.previous_page_number }}" >anterior</a>
+                {% endif %}
+
+                <span class="current">
+                    Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}.
+                </span>
+
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}">siguiente</a>
+                    <a href="?page={{ page_obj.paginator.num_pages }}">última &raquo;</a>
+                {% endif %}
+            </span>
+            
+        </div>
+        <a href="{% url 'clientes' %}" class="btn btn-secondary">Volver</a>
+    </div>
+    
+</div>
+{% endblock contenidoQueCambia %}
+

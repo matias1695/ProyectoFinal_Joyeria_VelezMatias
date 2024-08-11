@@ -1,0 +1,14 @@
+{% extends "AppJoyeria/base.html" %}
+
+{% block titulo %} Bienvenido al Administrador de Comercio {% endblock titulo %}
+
+{% block contenidoQueCambia %}
+    
+    <div class="main-container">
+        <div class="button-container">
+            <h1>Accesos Rapidos</h1>
+            <button onclick="location.href='{% url 'cargaTarea' %}'">Definir Tareas</button>
+            <button onclick="location.href='{% url 'cargaVentas' %}'">Cargar Venta</button>
+        </div>
+    </div>
+{% endblock contenidoQueCambia %}

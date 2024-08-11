@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <!-- Agregar el enlace a Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Agregar el enlace a Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Agregar el enlace al archivo CSS personalizado -->
+    <link rel="stylesheet" href="{% static 'accounts/css/style.css' %}">
+</head>
+<body>
+    {% if not user.is_authenticated %}
+    <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-fixed">
+        <a class="navbar-brand" href="{% url 'aboutUs' %}">About Us</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+    
+    <!-- Título de bienvenida -->
+    <div class="welcome-title">
+        <h1>Bienvenido al Administrador de Comercio</h1>
+    </div>
+    {% endif %}
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Columna para el formulario -->
+            <div class="col-md-6 d-flex align-items-center justify-content-center">
+                <div class="form_area">
+                    {% block main %}
+                    <div class="title">Iniciar Sesión</div>
+                    
+                    <!-- Mensaje personalizado en la vista de Login con estilos de Bootstrap -->
+                    <p>{{ msg_login }}</p>
+
+                    <form action="" method="POST" class="needs-validation" novalidate>
+                        {% csrf_token %}
+                        <div class="form_group">
+                            {{ form.as_p }}
+                        </div>
+                        <input type="submit" value="Enviar" class="btn">
+                        <p>Empleado sin cuenta? <a class="link" href="{% url 'Registro' %}">¡Regístralo!</a></p>
+                    </form>
+                    {% endblock main %}
+                </div>
+            </div>
+            <!-- Columna para la imagen -->
+            <div class="col-md-6">
+                <div class="side-image">
+                    <img src="{% static 'accounts/imagenes/1-removebg-preview.png' %}" alt="Logo" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

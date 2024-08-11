@@ -1,0 +1,121 @@
+/* Estilos para el contenedor y el diseño de la página */
+.container-fluid {
+    height: 100vh; /* Asegura que el contenedor ocupe toda la altura de la ventana */
+    padding: 0;
+}
+
+.row {
+    height: 100%;
+}
+
+.form_area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #e2bab3;
+    height: auto;
+    width: auto;
+    border: 2px solid #f79887;
+    border-radius: 20px;
+    box-shadow: 3px 4px 0px 1px #ac706b;
+    padding: 20px;
+}
+
+
+.title {
+    color: #264143;
+    font-weight: 900;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.form_group {
+    display:flex;
+    flex-direction:column;
+    align-items:end;
+    width: 100%;
+}
+
+.form_group_ed_us{
+    display:flex;
+    flex-direction:column;
+    align-items:baseline;
+    width: 90%;
+    margin: 20px;
+}
+
+.form_style:focus, .btn:focus {
+    transform: translateY(4px);
+    box-shadow: 1px 2px 0px 0px #ac706b;
+}
+
+.btn {
+    padding: 15px;
+    margin: 25px 25px;
+    width: 290px;
+    font-size: 15px;
+    background: #c48aa7;
+    border-radius: 10px;
+    font-weight: 800;
+    box-shadow: 3px 3px 0px 0px #ac706b;
+}
+
+.btn:hover {
+    opacity: .9;
+}
+
+.link {
+    font-weight: 800;
+    color: #913481;
+    padding: 5px;
+}
+
+/* Estilos para la imagen en el costado derecho */
+.side-image {
+    position: fixed; /* Fija la imagen en el costado derecho de la pantalla */
+    top: 50%; /* Posiciona la imagen verticalmente al centro */
+    right: 0; /* Posiciona la imagen en el borde derecho */
+    transform: translateY(-50%); /* Centra la imagen verticalmente */
+    width: 50%; /* Ajusta el tamaño de la imagen para que ocupe la mitad de la pantalla */
+    max-width: 500px; /* Ajusta el tamaño máximo de la imagen */
+    min-width: 200px; /* Establece un ancho mínimo para la imagen */
+    height: auto;
+    z-index: 100; /* Asegura que la imagen esté en un nivel superior, si es necesario */
+    margin-right: 150px;
+    
+}
+
+.side-image img {
+    width: 100%; /* Ajusta el tamaño de la imagen */
+    height: auto;
+    transition: width 0.3s ease-in-out; /* Transición suave al cambiar el tamaño */
+}
+
+.navbar-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 500; /* Asegura que el navbar esté sobre otros elementos */
+}
+
+/* Estilo para el título de bienvenida */
+.welcome-title {
+    position: absolute; /* Posiciona el título en un lugar fijo */
+    top: 80px; /* Ajusta el margen superior para que esté debajo de la navbar */
+    left: 50%; /* Centra el título horizontalmente */
+    transform: translateX(-50%); /* Centra el título en el eje horizontal */
+    width: 100%;
+    text-align: center; /* Centra el texto del título */
+    z-index: 200; /* Asegura que el título esté por encima del contenido */
+}
+
+.welcome-title h1 {
+    font-size: 2.5rem; /* Tamaño del título */
+    color: #8d4646; /* Color del título */
+    margin: 0;
+}
+body {
+    background-color: #f5e8e8; /* Cambia este color según tu preferencia */
+}

@@ -1,0 +1,30 @@
+{% extends "accounts/login.html" %}
+{% load static %}
+
+{% block main %}
+<div class="title">Registrarse</div>
+        <!-- Mostrar mensajes de éxito o error -->
+        {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                    <div class="{% if message.tags %}{{ message.tags }}{% endif %}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <!-- Formulario de Registro -->
+        <form action="" method="POST">
+            {% csrf_token %}
+            <div class="form_group">
+                {{ form.as_p }}
+            </div>
+            <input type="submit" value="Registrarse" class='btn'>
+            <a href="{% url 'login' %}" class="btn btn-block mt-2">Cancelar</a>
+        </form>
+    </div>
+</div>
+{% endblock main %}
+
+
